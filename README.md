@@ -3,6 +3,9 @@
 
 A minimal R pipeline that **downloads raw-count matrices from any number of GEO Series**, merges them, runs **DESeq2** with batch correction, and produces the **four most common RNA-seq QC plots**—all from a single function call.
 
+**But, hold a second. What is DEG Analysis and why do we run it?**
+Differentially expressed genes (DEGs) are genes whose activity levels rise or fall significantly when you compare one biological condition to another. For example, tumor tissue versus healthy tissue or drug-treated cells versus untreated controls. Pinpointing these expression shifts is powerful because it highlights the molecular circuitry most altered in a disease or response to a therapy. DEGs often identify key drivers of pathology, reveal early biomarkers that can enhance diagnosis or prognosis, and highlight pathways that are promising targets for new drugs. In short, DEG analysis converts raw transcriptome data into an actionable list of genes that advances our understanding of disease mechanisms and accelerates the search for more precise and effective treatments.
+
 ---
 
 ## Clone the repository
