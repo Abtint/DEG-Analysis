@@ -115,7 +115,7 @@ write.csv(res$deg, "DEGs.csv", row.names = FALSE)
 
 ## License
 
-MIT – use freely, cite politely.
+MIT.
 
 ---
 
