@@ -1,5 +1,5 @@
 
-# DEG-Analysis
+# DEG Analysis
 
 A minimal R pipeline that **downloads raw-count matrices from any number of GEO Series**, merges them, runs **DESeq2** with batch correction, and produces the **four most common RNA-seq QC plots**.
 
