@@ -116,6 +116,22 @@ write.csv(res$deg, "DEGs.csv", row.names = FALSE)
 
 ---
 
+## Common problems
+
+| Problem                                  | Symptom                                                                   | Resolution                                                                                                                                                                                                                                            |
+| ---------------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Count file not detected                  | `fetch_geo_counts` throws “No count file found”                           | Check the supplementary files on the GEO page. If the counts are inside a compressed archive extract them first or change the `pattern` argument to match the real file name, for example `"counts_matrix.csv"`.                                      |
+| Mixed file formats                       | Script stops with read errors or wrong column count                       | Inspect each downloaded file. Set the `pattern` argument to capture the correct file or adjust the separator inside `fetch_geo_counts` to comma or tab as needed.                                                                                     |
+| Sample identifiers do not match          | Function stops with “column names do not match sample\_sheet\$sample\_id” | Open the count matrix and your metadata and be sure the column names are identical, including upper and lower case. Rename columns or rows so they match exactly.                                                                                     |
+| Libraries too small                      | Library size plot shows red bars and dispersion plot looks noisy          | Remove or resequence samples with fewer than one million reads, or raise `min_lib` if your project demands deeper coverage. Rerun the pipeline after dropping weak libraries from the metadata.                                                       |
+| Strong batch effect                      | PCA clusters by dataset not by condition                                  | Increase biological replicates if possible, or include additional covariates in the design, for example `~ dataset + sex + condition`. Consider running a batch correction method such as limma removeBatchEffect on VST counts before visualization. |
+| Inconsistent gene identifiers            | Many blank rows in results or zero counts after merge                     | Make sure every dataset reports gene symbols or every dataset reports Ensembl identifiers, not a mix. Convert with biomaRt or another gene mapping tool before running the merge step.                                                                |
+| Memory limit reached                     | R session crashes or freezes when merging very large matrices             | Run the script on a system with more memory, or pre filter each matrix to protein coding genes only, or work chromosome by chromosome and combine results later.                                                                                      |
+| Internet or firewall blocks GEO download | `getGEOSuppFiles` fails with curl or timeout message                      | Download the files manually through a browser, place them inside `geo_downloads/GSEXXXXX`, and skip the automatic download by commenting out the call to `getGEOSuppFiles`.                                                                           |
+| Blank or empty QC figures                | PNG files created but plots appear white                                  | Verify that the count matrix contains more than one sample per condition and that the low count filter did not remove all genes. Lower `min_counts` if necessary.                                                                                     |
+
+---
+
 ## License
 
 MIT.
