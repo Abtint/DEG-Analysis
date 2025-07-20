@@ -57,7 +57,7 @@ install.packages(c(
 source("geo_deg_qc.R")
 
 # 2. List the GEO Series you want
-gse_ids <- c("GSE111111", "GSE222222")      # replace with real IDs
+gse_ids <- c("GSE111111", "GSE222222")      # replace with your IDs
 
 # 3. Build a sample metadata data.frame
 meta <- data.frame(
