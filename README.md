@@ -10,7 +10,7 @@ Differentially expressed genes (DEGs) are genes whose activity levels rise or fa
 
 ## Clone the repository
 
-Choose any method below, then switch into the project folder:
+Choose any method below. Then, switch into the project folder:
 
 ```bash
 # HTTPS
