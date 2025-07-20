@@ -31,7 +31,7 @@ cd DEG-Analysis
 
 | File               | Purpose                                                                           |
 | ------------------ | --------------------------------------------------------------------------------- |
-| **`DE_Analysis.R`** | All-in-one pipeline: download counts → merge → DESeq2 → QC plots → tidy DEG table |
+| **`DEG_Analysis.R`** | All-in-one pipeline: download counts → merge → DESeq2 → QC plots → tidy DEG table |
 
 ---
 
